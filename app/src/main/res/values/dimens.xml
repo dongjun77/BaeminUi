@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="divider_size">0.5dp</dimen>
+
+    <dimen name="home_drawer_btn_height">75dp</dimen>
+</resources>
