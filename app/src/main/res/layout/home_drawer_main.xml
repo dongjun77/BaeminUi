@@ -1,12 +1,14 @@
 <ScrollView
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:scrollbars="none"
+    >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#ffffff"
         >
@@ -42,8 +44,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="lv.화이트"
                     android:gravity="bottom"
+                    android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="lv.화이트"
+                    android:textSize="9sp"
+                    android:background="@drawable/shape_level_background"
                     />
 
                 <TextView
@@ -51,13 +59,14 @@
                     android:layout_height="wrap_content"
                     android:text="하루살이7"
                     android:textStyle="bold"
-                    android:textSize="14sp"
+                    android:textSize="11sp"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0p"
+                    android:textSize="11sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:gravity="top"
                     />
@@ -211,7 +220,7 @@
                 </LinearLayout>
 
                 <View
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="@drawable/selector_transparent_black_opacity"
                     />
@@ -574,28 +583,51 @@
         </LinearLayout>
 
 
-        <View
-            android:layout_gravity="center"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/divider_size"
-            android:background="#7b7b7b"
-            />
+            android:layout_height="wrap_content"
+            android:background="@color/colorBaeminRealDark"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_size"
+                android:layout_gravity="center"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:background="#7b7b7b"
+                />
+        </FrameLayout>
+
 
         <LinearLayout
             android:id="@+id/li_home_store"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:background="@color/colorBaeminRealDark"
             android:orientation="vertical"
-            >
-
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center"
-                android:text="Copyright Woowa Brothers in Song-pa. All Rights Reserved.\nVersion 8.0.3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copyright Woowa Brothers in Song-pa. All Rights Reserved."
                 android:textSize="8sp"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:text="version 8.1.1"
+                android:textSize="9sp"
+                android:background="@drawable/shape_version_background"
+                />
+
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

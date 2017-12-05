@@ -6,6 +6,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorBaeminPreDark">#ece9e9</color>
     <color name="colorBaeminRealDark">#cccccc</color>
+    <color name="colorBaeminVersionRealDark">#aaaaaa</color>
 
     <color name="colorDivider">#cbcbcb</color>
     <color name="colorBlackOpacity">#22000000</color>
