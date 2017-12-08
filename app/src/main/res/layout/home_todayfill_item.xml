@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="240dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="horizontal"
+    android:background="@drawable/shape_todayfill_home_background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_home_todayfill_simpleitem"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            fresco:actualImageScaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/iv_home_todayfill_titleitem"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="8dp"
+            android:text="개경순대 부천점"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/iv_home_todayfill_tagitem"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:paddingLeft="8dp"
+            android:text="#한식 #개성순대국 #순대 #순대곱창볶음"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

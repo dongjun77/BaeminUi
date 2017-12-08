@@ -21,6 +21,40 @@
             layout="@layout/home_toolbar"
             />
 
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <include
+                        layout="@layout/home_banner"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="700dp"
+                        android:orientation="vertical">
+                    </LinearLayout>
+                    <include
+                        layout="@layout/home_todayfill"
+                        />
+                </LinearLayout>
+
+
+
+
+
+
+        </android.support.v4.widget.NestedScrollView>
+
 
 
 
