@@ -8,4 +8,7 @@
     <dimen name="home_banner_margin_position">16dp</dimen>
     <dimen name="home_banner_padding_horizontal_position">8dp</dimen>
     <dimen name="home_banner_padding_vertical_position">3dp</dimen>
+
+    <dimen name="home_todayfill_height">240dp</dimen>
+    <dimen name="home_todayfill_weight">320dp</dimen>
 </resources>

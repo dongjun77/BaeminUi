@@ -1,9 +1,12 @@
 package com.example.edj07.baemin.app.home;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +23,7 @@ import com.example.edj07.baemin.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,6 +42,21 @@ public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_home_todayfill) RecyclerView rvTodayfill;
     private HomeTodayfillAdapter todayfillAdapter;
+    @BindDrawable(R.drawable.shape_home_todayfill_divider)
+    Drawable todayfillDrawableDivider;
+
+
+    @BindView(R.id.rv_home_category) RecyclerView rvCategory;
+    private HomeCategoryAdapter categoryAdapter;
+    @BindDrawable(R.drawable.shape_home_category_divider)
+    Drawable categoryDrawableDivider;
+
+
+    @BindView(R.id.rv_home_search) RecyclerView rvSearch;
+    private HomeSearchAdapter searchAdapter;
+    @BindDrawable(R.drawable.shape_home_search_divider)
+    Drawable searchDrawableDivider;
+
 
     @OnClick(R.id.btn_home_point)
     void onPointClicked(){
@@ -116,13 +135,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home_main);
         ButterKnife.bind(this);
 
-        initBannerRecycler();
-
         initDrawer();
 
+        initBannerRecycler();
         initTodayfillRecycler();
+        initCategoryRecycler();
 
-
+        initSearchRecycler();
 
     }
 
@@ -173,7 +192,6 @@ public class HomeActivity extends AppCompatActivity {
         rvBanner.setLayoutManager(BannerLayoutManager);
 
         bannerAdapter = new HomeBannerAdapter();
-        rvBanner.setAdapter(bannerAdapter);
 
         PagerSnapHelper helper = new PagerSnapHelper();
         helper.attachToRecyclerView(rvBanner);
@@ -208,6 +226,50 @@ public class HomeActivity extends AppCompatActivity {
         images.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR03AlHVofsroDfMutMP8z-Tp-S-ywyTazBB7YAcDgbzokqLGtfJw");
         bannerAdapter.setItems(images);
         tvBannerPosition.setText(String.format("1 / %d", bannerAdapter.getItemCount()));
+        rvBanner.setAdapter(bannerAdapter);
+    }
+
+    private void initCategoryRecycler(){
+        GridLayoutManager layoutManager = new GridLayoutManager(this , 3);
+
+//        Drawable horizontalDivider = ContextCompat.getDrawable(this, R.drawable.shape_home_category_divider);
+//        Drawable verticalDivider = ContextCompat.getDrawable(this, R.drawable.shape_home_search_divider);
+
+//        DividerItemDecoration itemDecorationVertical = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+//        DividerItemDecoration itemDecorationHorizontal = new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL);
+
+        rvCategory.setLayoutManager(layoutManager);
+
+        rvCategory.setNestedScrollingEnabled(false);
+        rvCategory.setHasFixedSize(true);
+
+//        itemDecorationVertical.setDrawable(categoryDrawableDivider);
+//        itemDecorationHorizontal.setDrawable(categoryDrawableDivider);
+
+//        rvCategory.addItemDecoration(itemDecorationVertical);
+//        rvCategory.addItemDecoration(itemDecorationHorizontal);
+
+//        int spanCount = 3; //column 갯수
+//        int spacing = 50; //50px
+//        boolean includeEdge = true;
+//        rvCategory.addItemDecoration(new HomeCategoryVerticalItemDecoration(spanCount,spacing,includeEdge));
+
+        rvCategory.addItemDecoration(
+                new HomeCategoryVerticalItemDecoration(ContextCompat.getDrawable(getApplicationContext(),R.drawable.shape_home_category_divider)));
+
+        rvCategory.addItemDecoration(
+                new HomeCategoryHorizontalItemDecoration(ContextCompat.getDrawable(getApplicationContext(),R.drawable.shape_home_category_divider)));
+
+        categoryAdapter = new HomeCategoryAdapter();
+        List<String> images = new ArrayList<>();
+        for (int i = 0; i<14; i++){
+
+            images.add("http://news20.busan.com/content/image/2017/08/23/20170823000179_0.jpg");
+        }
+        categoryAdapter.setItems(images);
+
+        rvCategory.setAdapter(categoryAdapter);
+
     }
 
     private void initTodayfillRecycler(){
@@ -223,13 +285,56 @@ public class HomeActivity extends AppCompatActivity {
         rvTodayfill.setNestedScrollingEnabled(false);
         rvTodayfill.setHasFixedSize(true);
 
-        List<String> images2 = new ArrayList<>();
-        images2.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR03AlHVofsroDfMutMP8z-Tp-S-ywyTazBB7YAcDgbzokqLGtfJw");
-        images2.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxAi8dcGMEHIXFmUsy1zaACg0NDn3Ta_ZV0woVz2aFVzqMJpFGQ");
-        images2.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUvbj4AfRlc5PjdKSMr2iPvUq_2k5j3d6AhQU_NFg5fyJIUOB7w");
-        images2.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoJVUxNQzHoBNwWb9RCTY1Hp1fIEHycheuZpcN02HMNO2GLs40");
-        images2.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR03AlHVofsroDfMutMP8z-Tp-S-ywyTazBB7YAcDgbzokqLGtfJw");
-        todayfillAdapter.setItems(images2);
+//        DividerItemDecoration itemDecorationHorizontal = new DividerItemDecoration(this,DividerItemDecoration.HORIZONTAL);
+//        itemDecorationHorizontal.setDrawable(todayfillDrawableDivider);
+//
+//        rvTodayfill.addItemDecoration(itemDecorationHorizontal);
+
+        rvTodayfill.addItemDecoration(
+                new HomeTodayfillHorizontalItemDecoration(ContextCompat.getDrawable(getApplicationContext(),R.drawable.shape_home_todayfill_divider))
+        );
+
+        List<String> images = new ArrayList<>();
+        images.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR03AlHVofsroDfMutMP8z-Tp-S-ywyTazBB7YAcDgbzokqLGtfJw");
+        images.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSxAi8dcGMEHIXFmUsy1zaACg0NDn3Ta_ZV0woVz2aFVzqMJpFGQ");
+        images.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHUvbj4AfRlc5PjdKSMr2iPvUq_2k5j3d6AhQU_NFg5fyJIUOB7w");
+        images.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoJVUxNQzHoBNwWb9RCTY1Hp1fIEHycheuZpcN02HMNO2GLs40");
+        images.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR03AlHVofsroDfMutMP8z-Tp-S-ywyTazBB7YAcDgbzokqLGtfJw");
+        todayfillAdapter.setItems(images);
+    }
+
+    private void initSearchRecycler() {
+
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
+        rvSearch.setLayoutManager(layoutManager);
+
+        rvSearch.setNestedScrollingEnabled(false);
+        rvSearch.setHasFixedSize(true);
+//        DividerItemDecoration itemDecorationVertical = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+//        DividerItemDecoration itemDecorationHorizontal = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
+
+//        itemDecorationVertical.setDrawable(searchDrawableDivider);
+//        itemDecorationHorizontal.setDrawable(searchDrawableDivider);
+//
+//        rvSearch.addItemDecoration(itemDecorationHorizontal);
+//        rvSearch.addItemDecoration(itemDecorationVertical);
+
+        rvSearch.addItemDecoration(
+                new HomeSearchHorizontalItemDecoraion(ContextCompat.getDrawable(getApplicationContext(),R.drawable.shape_home_search_divider))
+        );
+        rvSearch.addItemDecoration(
+                new HomeSearchVerticalItemDecoration(ContextCompat.getDrawable(getApplicationContext(),R.drawable.shape_home_search_divider))
+        );
+
+        searchAdapter = new HomeSearchAdapter();
+        List<String> strings = new ArrayList<>();
+        for (int i = 0; i<14; i++){
+
+            strings.add("배민라이더스");
+        }
+
+        searchAdapter.setItems(strings);
+        rvSearch.setAdapter(searchAdapter);
     }
 
     @Override

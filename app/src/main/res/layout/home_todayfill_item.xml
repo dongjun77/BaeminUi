@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="320dp"
-    android:layout_height="240dp"
+    android:layout_width="@dimen/home_todayfill_weight"
+    android:layout_height="@dimen/home_todayfill_height"
     android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
     android:layout_marginBottom="10dp"
     android:orientation="horizontal"
     android:background="@drawable/shape_todayfill_home_background"
@@ -21,21 +20,22 @@
             android:id="@+id/iv_home_todayfill_simpleitem"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            fresco:actualImageScaleType="centerCrop" />
+            fresco:actualImageScaleType="centerCrop"
+            />
 
         <TextView
-            android:id="@+id/iv_home_todayfill_titleitem"
+            android:id="@+id/tv_home_todayfill_titleitem"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:paddingTop="5dp"
             android:paddingLeft="8dp"
+            android:paddingTop="5dp"
             android:text="개경순대 부천점"
             android:textSize="15sp"
             android:textStyle="bold"
             />
 
         <TextView
-            android:id="@+id/iv_home_todayfill_tagitem"
+            android:id="@+id/tv_home_todayfill_tagitem"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:paddingLeft="8dp"
@@ -44,6 +44,5 @@
             android:textStyle="italic"
             />
     </LinearLayout>
-
 
 </LinearLayout>

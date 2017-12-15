@@ -24,8 +24,8 @@ public class HomeTodayfillViewHolder extends RecyclerView.ViewHolder {
     }
 
     @BindView(R.id.iv_home_todayfill_simpleitem)SimpleDraweeView ivSimpleItem;
-    @BindView(R.id.iv_home_todayfill_titleitem)TextView ivTitleItem;
-    @BindView(R.id.iv_home_todayfill_tagitem)TextView ivTagItem;
+    @BindView(R.id.tv_home_todayfill_titleitem)TextView ivTitleItem;
+    @BindView(R.id.tv_home_todayfill_tagitem)TextView ivTagItem;
 
     public HomeTodayfillViewHolder(View itemView) {
         super(itemView);

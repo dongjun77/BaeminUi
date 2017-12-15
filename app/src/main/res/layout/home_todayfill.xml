@@ -9,8 +9,50 @@
         android:id="@+id/rv_home_todayfill"
         android:layout_width="0dp"
         android:layout_height="240dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/fl_home_todayfill"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
+
+    <FrameLayout
+        android:id="@+id/fl_home_todayfill"
+        android:layout_width="0dp"
+        android:layout_height="192dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="128dp"
+            android:layout_gravity="center"
+            android:text="오늘은 \n이거 어때요?"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom|left"
+            android:text=" 칼바람 이기는 #국물"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom|right"
+            android:src="@mipmap/baeminee" />
+
+    </FrameLayout>
+
+    <!--<View-->
+    <!--android:background="#dddddd"-->
+    <!--android:layout_width="10dp"-->
+    <!--android:layout_height="240dp"-->
+    <!--app:layout_constraintRight_toRightOf="@+id/rv_home_todayfill"/>-->
 
 </android.support.constraint.ConstraintLayout>
