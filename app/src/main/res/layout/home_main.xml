@@ -30,15 +30,19 @@
                 android:orientation="vertical"
                 >
                 <include
+                    android:id="@+id/home_banner_view"
                     layout="@layout/home_banner"
                     />
                 <include
+                    android:id="@+id/home_category_view"
                     layout="@layout/home_category"
                     />
                 <include
+                    android:id="@+id/home_todayfill_view"
                     layout="@layout/home_todayfill"
                     />
                 <include
+                    android:id="@+id/home_search_view"
                     layout="@layout/home_search"
                     />
             </LinearLayout>

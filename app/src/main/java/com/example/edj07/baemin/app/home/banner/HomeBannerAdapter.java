@@ -1,4 +1,4 @@
-package com.example.edj07.baemin.app.home;
+package com.example.edj07.baemin.app.home.banner;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by edj07 on 2017-12-07.
+ * Created by edj07 on 2017-12-05.
  */
 
-public class HomeTodayfillAdapter extends RecyclerView.Adapter<HomeTodayfillViewHolder> {
+class HomeBannerAdapter extends RecyclerView.Adapter<HomeBannerViewHolder>{
 
     private List<String> items = new ArrayList<>();
 
@@ -21,17 +21,17 @@ public class HomeTodayfillAdapter extends RecyclerView.Adapter<HomeTodayfillView
     }
 
     @Override
-    public HomeTodayfillViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return HomeTodayfillViewHolder.newInstance(parent);
+    public HomeBannerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return HomeBannerViewHolder.newInstance(parent);
     }
 
     @Override
-    public void onBindViewHolder(HomeTodayfillViewHolder holder, int position) {
+    public void onBindViewHolder(HomeBannerViewHolder holder, int position) {
         holder.bindItem(items.get(position));
     }
 
     @Override
-    public int getItemCount() {
+     public int getItemCount() {
         return items.size();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.edj07.baemin.app.home;
+package com.example.edj07.baemin.app.home.search;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

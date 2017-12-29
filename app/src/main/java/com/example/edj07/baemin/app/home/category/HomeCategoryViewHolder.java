@@ -1,4 +1,4 @@
-package com.example.edj07.baemin.app.home;
+package com.example.edj07.baemin.app.home.category;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,20 +12,20 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by edj07 on 2017-12-05.
+ * Created by edj07 on 2017-12-08.
  */
 
-public class HomeBannerViewHolder extends RecyclerView.ViewHolder {
+public class HomeCategoryViewHolder extends RecyclerView.ViewHolder {
 
-    public static HomeBannerViewHolder newInstance(ViewGroup parent){
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_banner_item,parent,false);
-        return new HomeBannerViewHolder(itemView);
+    public static HomeCategoryViewHolder newInstance(ViewGroup parent){
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_category_item,parent,false);
+        return new HomeCategoryViewHolder(itemView);
     }
 
-    @BindView(R.id.iv_home_banner_item)
+    @BindView(R.id.iv_home_categoryitem)
     SimpleDraweeView ivItem;
 
-    public HomeBannerViewHolder(View itemView){
+    public HomeCategoryViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this,itemView);
     }
@@ -33,5 +33,4 @@ public class HomeBannerViewHolder extends RecyclerView.ViewHolder {
     public void bindItem(String imageUri){
         ivItem.setImageURI(imageUri);
     }
-
 }
